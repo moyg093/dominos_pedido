@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haz tu pedido - Domino's Pizza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="order-container">
+    <header class="order-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Domino%27s_pizza_logo.svg" alt="Domino's Pizza Logo" class="logo">
+      <h1>Configura tu Pizza</h1>
+    </header>
+
+    <form class="pizza-form" action="procesar_pedido.php" method="POST">
+
+      <!-- Sección 1: Tipo de Entrega -->
+      <fieldset class="form-section">
+        <legend>1. Método de Entrega</legend>
+        <div class="radio-group">
+          <label class="card-radio">
+            <input type="radio" name="delivery_type" value="delivery" checked>
+            <span class="card-content">🛵 Domicilio</span>
+          </label>
+          <label class="card-radio">
+            <input type="radio" name="delivery_type" value="carryout">
+            <span class="card-content">🏪 Llevar (Mostrador)</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Sección 2: Tamaño de la Pizza -->
+      <fieldset class="form-section">
+        <legend>2. Tamaño</legend>
+        <div class="radio-group">
+          <label class="card-radio">
+            <input type="radio" name="size" value="individual">
+            <span class="card-content">Individual (10")</span>
+          </label>
+          <label class="card-radio">
+            <input type="radio" name="size" value="mediana" checked>
+            <span class="card-content">Mediana (12")</span>
+          </label>
+          <label class="card-radio">
+            <input type="radio" name="size" value="familiar">
+            <span class="card-content">Familiar (14")</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Sección 3: Tipo de Masa -->
+      <fieldset class="form-section">
+        <legend>3. Tipo de Masa</legend>
+        <select name="crust" class="custom-select" required>
+          <option value="original">Original (Masa tradicional)</option>
+          <option value="crunchy">Crunchy (Delgada y crujiente)</option>
+          <option value="pan">Pan Pizza (Esponjosa horneada en sartén)</option>
+          <option value="cheesy">Sartén Rellena de Queso</option>
+        </select>
+      </fieldset>
+
+      <!-- Sección 4: Ingredientes -->
+      <fieldset class="form-section">
+        <legend>4. Selecciona tus Ingredientes</legend>
+        <div class="checkbox-grid">
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="pepperoni" checked> Pepperoni
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="jamon"> Jamón
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="champinones"> Champiñones
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="pimientos"> Pimientos
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="cebolla"> Cebolla
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="toppings" value="extra_queso"> Extra Queso
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Sección 5: Datos del Cliente -->
+      <fieldset class="form-section">
+        <legend>5. Datos de Contacto</legend>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required>
+          </div>
+          <div class="input-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" placeholder="55 1234 5678" required>
+          </div>
+          <div class="input-group full-width">
+            <label for="address">Dirección de entrega</label>
+            <input type="text" id="address" name="address" placeholder="Calle, Número, Colonia y Referencias" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Botón de Envío -->
+      <div class="form-footer">
+        <button type="submit" class="btn-submit">Confirmar y Pedir 🍕</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>

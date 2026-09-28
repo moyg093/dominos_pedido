@@ -1,0 +1,158 @@
+:root {
+  --primary-blue: #006491;
+  --primary-red: #E31837;
+  --bg-light: #f4f6f8;
+  --text-dark: #222222;
+  --border-color: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 20px;
+}
+
+.order-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.order-header h1 {
+  font-size: 1.6rem;
+  color: var(--primary-blue);
+}
+
+.form-section {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.form-section legend {
+  font-weight: bold;
+  color: var(--primary-red);
+  padding: 0 8px;
+}
+
+/* Radio buttons estilizados como tarjetas */
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.card-radio {
+  flex: 1;
+  cursor: pointer;
+}
+
+.card-radio input {
+  display: none;
+}
+
+.card-content {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.card-radio input:checked + .card-content {
+  border-color: var(--primary-blue);
+  background-color: #e6f2f8;
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+/* Inputs y Selects */
+.custom-select, .input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Grid de checkboxes */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Grid de datos de cliente */
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Botón de acción */
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #b81028;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .radio-group, .input-grid {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+}
